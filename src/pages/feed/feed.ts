@@ -14,22 +14,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 	templateUrl: 'feed.html',
 })
 export class FeedPage {
-	public nome_usuario: string = "Victor Bernardes.";
-	// public resultado:number;
-	// public x:number;
-
-	/* public somaDoisNumeros():void{
-		this.x = parseFloat(window.prompt("Informe um número!"));
-		this.resultado = this.x*2;
-		alert(this.resultado);
-	} */
+	public objeto_feed = {
+		titulo : "Victor Bernardes",
+		date : "May 24, 2017",
+		img : "/assets/images/feed_imagem.gif",
+		descricao : "Que otá?",
+		qtd_likes : 12,
+		qtd_comments: 4,
+		date_post : "11h atrás"
+	}
 
 	constructor(public navCtrl: NavController, public navParams: NavParams) {
 	}
 
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad FeedPage');
-		// this.somaDoisNumeros();
 	}
 
 }
