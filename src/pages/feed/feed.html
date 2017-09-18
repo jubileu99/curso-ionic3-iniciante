@@ -14,19 +14,19 @@
 
 
 <ion-content padding>
-  <ion-card>
+  <ion-card *ngFor="let filme of lista_filmes">
     <ion-item>
       <ion-avatar item-start>
-        <img src="/assets/images/feed_avatar.jpg">
+        <img [src]='"https://image.tmdb.org/t/p/w500/"+ filme.poster_path'>
       </ion-avatar>
-      <div class="Feed_title">{{ objeto_feed.titulo }}</div>
-      <p class="Feed_date">{{ objeto_feed.date }}</p>
+      <div class="Feed_title">{{ filme.original_title }}</div>
+      <p class="Feed_date">{{ filme.release_date }}</p>
     </ion-item>
 
-    <img src="{{ objeto_feed.img }}">
+    <img [src]='"https://image.tmdb.org/t/p/w500/"+ filme.backdrop_path'>
 
     <ion-card-content>
-      <p>{{ objeto_feed.descricao }}</p>
+      <p>{{ filme.overview }}</p>
     </ion-card-content>
 
     <ion-row>
@@ -42,7 +42,8 @@
         <div>{{ objeto_feed.qtd_comments }} Comentários</div>
       </button>
       </ion-col>
-      <br>
+    </ion-row>
+    <ion-row>
       <ion-col center text-center>
         <ion-note>
           {{objeto_feed.date_post}}
